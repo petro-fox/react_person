@@ -1,8 +1,11 @@
 export const Person = ({ person }) => (
-  <section className={`Person${person.age ? ' Person__age' : ''}`}>
+  <section className="Person">
     <h2 className="Person__name">My name is {person.name}</h2>
-    {person.age && <p className="Person__age">I am {person.age}</p>}
-    {person.partnerName ? (
+    <p className="Person__age">
+      {' '}
+      {person.age !== undefined ? `I am ${person.age}` : ''}
+    </p>
+    {person.partnerName !== undefined ? (
       <p className="Person__partner">
         {person.partnerName} is my {person.sex === 'm' ? 'wife' : 'husband'}
       </p>
